@@ -1,55 +1,37 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 
 public class Player{
-    public Player(ImageIcon playerIcon, int x, int y){
-        this.xLocation = x;
-        this.yLocation = y;
-        this.playerIcon=playerIcon;
+    public Player(){
         createPlayer();
     }
 
-    private final int width = 16;
-    private final int height = 16;
-    private int xLocation;
-    private int yLocation;
-    private int speed;
-    private JLabel player;
+    private final int playerWidth = 100;
+    private final int playerHeight = 100;
+    private int playerX = 210;
+    private int playerY = 350;
+    public JLabel playerLabel = new JLabel();
+    String playerIcon = "C:\\Users\\william hansen\\Desktop\\ice images\\PlayerTest.png";
 
-    private ImageIcon playerIcon = new ImageIcon("path ");
 
-    public int getxLocation(){
-        return this.xLocation;
+
+    public int getPlayerY(){
+        return this.playerY;
     }
-    public int getyLocation(){
-        return this.yLocation;
+    public int getPlayerX(){
+        return this.playerX;
     }
-    public int getSpeed(){
-        return this.speed;
+    public void setPlayerX(int x){
+        this.playerX = x;
     }
-    public JLabel getPlayer(){
-        return this.player;
-    }
-    public void setxLocation(int x){
-        this.xLocation = x;
-    }
-    public void setyLocation(int y){
-        this.yLocation = y;
+    public void setPlayerY(int y){
+        this.playerY = y;
     }
     public void createPlayer(){
-        JLabel player = new JLabel();
-        player.setBounds(this.xLocation, this.yLocation, width, height);
-        player.setIcon(this.playerIcon);
+        playerLabel.setIcon(new ImageIcon(playerIcon));
+        playerLabel.setBounds(playerX, playerY, playerWidth, playerHeight);
     }
-    public void shoot(){
-       // Bullets z = new Bullets();
-
-    }
-
-
-
-
-
-
 }
